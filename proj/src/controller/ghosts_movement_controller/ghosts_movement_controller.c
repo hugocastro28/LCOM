@@ -17,7 +17,7 @@ void (moveLeft)(int ghostIndex) {
     ghosts[ghostIndex].pos.left_x -= GHOST_STEP;
     ghosts[ghostIndex].pos.right_x -= GHOST_STEP;
 
-    if (maze_collision(ghosts[ghostIndex].pos) || ghosts_collision(ghosts[ghostIndex].pos, ghostIndex))
+    if (ghosts_collision(ghosts[ghostIndex].pos, ghostIndex))
         ghosts[ghostIndex].pos = aux;
     else if (ghost_pacman_collision(ghosts[ghostIndex].pos))
         game_is_on = false;
@@ -28,7 +28,7 @@ void (moveRight)(int ghostIndex) {
     ghosts[ghostIndex].pos.left_x += GHOST_STEP;
     ghosts[ghostIndex].pos.right_x += GHOST_STEP;
 
-    if (maze_collision(ghosts[ghostIndex].pos) || ghosts_collision(ghosts[ghostIndex].pos, ghostIndex))
+    if (ghosts_collision(ghosts[ghostIndex].pos, ghostIndex))
         ghosts[ghostIndex].pos = aux;
     else if (ghost_pacman_collision(ghosts[ghostIndex].pos))
         game_is_on = false;
@@ -39,7 +39,7 @@ void (moveUp)(int ghostIndex) {
     ghosts[ghostIndex].pos.bottom_y -= GHOST_STEP;
     ghosts[ghostIndex].pos.top_y -= GHOST_STEP;
 
-    if (maze_collision(ghosts[ghostIndex].pos) || ghosts_collision(ghosts[ghostIndex].pos, ghostIndex))    
+    if (ghosts_collision(ghosts[ghostIndex].pos, ghostIndex))    
         ghosts[ghostIndex].pos = aux;
     else if (ghost_pacman_collision(ghosts[ghostIndex].pos))
         game_is_on = false;
@@ -50,7 +50,7 @@ void (moveDown)(int ghostIndex) {
     ghosts[ghostIndex].pos.bottom_y += GHOST_STEP;
     ghosts[ghostIndex].pos.top_y += GHOST_STEP;
 
-    if (maze_collision(ghosts[ghostIndex].pos) || ghosts_collision(ghosts[ghostIndex].pos, ghostIndex))
+    if (ghosts_collision(ghosts[ghostIndex].pos, ghostIndex))
         ghosts[ghostIndex].pos = aux;
     else if (ghost_pacman_collision(ghosts[ghostIndex].pos))
         game_is_on = false;

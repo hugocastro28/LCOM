@@ -4,9 +4,10 @@
 
 #include "../../devices/timer/timer.h"
 #include "../game_controller.h"
-#include "timer_controller.h"
 #include "../ghosts_movement_controller/ghosts_movement_controller.h"
+#include "../../view/initialize_pixmaps.h"
 #include "../../view/ghosts_view/ghosts_view.h"
+#include "timer_controller.h"
 
 unsigned int game_time;
 unsigned int timer_minutes;
@@ -51,7 +52,7 @@ void (timer_interrupt_handler)() {
     if (int_counter % 10 == 0) {
         erase_ghosts();
         move_ghosts();
-        draw_ghosts();
+        draw_game_elements();
     }
 }
 
